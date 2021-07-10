@@ -23,7 +23,7 @@ The cars.json File in the root direcotry contains a list of every cars name and 
 
 The ForzaParser.js ```parseData()``` method returns the following data:
 
-```json
+```js
 {
   "isRaceOn": 0,  // 1 = drive, 0 menu
   "timestampMS": 1031551109,  // can overflow to 0
