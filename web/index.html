@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForzaStats</title>
+
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #StatsChartContainer {
+            position: relative;
+        }
+        #stats {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 30px 0px;
+        }
+        #car-stats {
+            display: flex;
+            justify-content: space-between;
+        }
+        h2 {
+            margin: 0px 40px
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>ForzaStats</h1>
+
+    <!-- Info about the car -->
+    <div id="car-stats">
+        <p>Player is driving a <b id="stats_car_name">?</b></p>
+        <p><span id="stats_car_info">?</span></p>
+    </div>
+
+    <!-- Info about speed rpm and gear -->
+    <div id="stats">
+        <h2><span id="stats_speed"></span> km/h</h2>
+        <h2><span id="stats_rpm"></span> rpm</h2>
+        <h2>Gear: <span id="stats_gear"></span></h2>
+    </div>
+
+    <!-- Diagram about speed rpm and gear -->
+    <div id="StatsChartContainer">
+        <canvas id="StatsChart"></canvas>
+    </div>
+
+    <!-- Displays formated JSON Object of all data. (remove display: none; to activate) -->
+    <p style="white-space: pre; display: none;" id="stats_misc"></p>
+
+</body>
+
+<script src="forzastats.js"></script>
+
+</html>
