@@ -1,15 +1,11 @@
-const http = require("http");
-const fs = require("fs");
 var udp = require('dgram');
 const forza = require('./ForzaParser');
 
 var GameData = {};
 
-var ext = [];
-
+// load config and extension
 var config = require('./config.js');
-
-_hook_serve_message = function () { };
+var ext = [];
 
 console.clear()
 console.log('----------------------------------------------------------');
@@ -44,35 +40,6 @@ server.on('message', function (msg) {
 
 // udp server | bind to port 9999
 server.bind(9999);
-
-
-// -------------------------    HTTP SERVER    ------------------------- 
-
-const host = 'localhost';
-const port = 80;
-
-// http | create server
-const http_server = http.createServer(function (req, res) {
-
-    // Serve /web files
-    if (req.url == '/index.html' || req.url == '/') {
-        fs.readFile('./web/index.html', function (err, data) {
-            res.end(data);
-        });
-    } else if (req.url == '/forzastats.js') {
-        fs.readFile('./web/forzastats.js', function (err, data) {
-            res.end(data);
-        });
-    } else {
-        res.end(JSON.stringify(GameData));
-    }
-});
-
-// http | listen to port
-http_server.listen(port, host, () => {
-    console.log(`HTTTP  | Server is running on http://${host}:${port}`);
-});
-
 
 // -------------------------    EXTENSIONS   ------------------------- 
 

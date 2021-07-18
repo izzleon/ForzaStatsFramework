@@ -9,5 +9,13 @@ module.exports = {
         delayMs: 100,
       }
     },
+    http: {
+      file: "./web/http_extension.js",
+      config: {
+        host: "localhost",
+        port: 80,
+        www_dir: "./web/www",
+      }
+    },
   }
 };
