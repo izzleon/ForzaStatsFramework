@@ -1,7 +1,9 @@
 # ForzaStats
-The ForzaStats Project gives easy access to live data from Forza Horizon 4 or Motorsports 7.
+The ForzaStats Project gives easy access to live data from Forza Horizon 4, 5 or Motorsports 7.
 
 It uses the "data out" feature, which enables the game to output a UDP data stream to a configurable IP address.
+Just run this project on a server or localy on you pc and point the UDP stream to it.
+(Menue, Settings, Hud and Gameplay, scroll to the bottom, enable data out and configure ip and port)
 
 ## Forza Parser
 
@@ -188,8 +190,9 @@ Extension must export functions:
   Setup: function (GameData, config)
   _hook_serve_message: function (GameData)
 
-## HTTP Server Extension
-The http server example is a website that shows driving statistics
 
-## Serial COM Extension
-The arduino example is a RPM display
+### HTTP Server Extension
+The http server example is a website that shows car statistics.
+
+### Serial COM Extension
+The arduino example is a RPM display. The data is sent via serial usb.
