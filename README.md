@@ -1,4 +1,4 @@
-# ForzaStats
+# FSF | ForzaStatsFramework
 The ForzaStats Project gives easy access to live data from Forza Horizon 4, 5 or Motorsports 7.
 
 It uses the "data out" feature, which enables the game to output a UDP data stream to a configurable IP address.
