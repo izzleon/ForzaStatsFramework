@@ -3,9 +3,6 @@ The ForzaStats Project gives easy access to live data from Forza Horizon 4 or Mo
 
 It uses the "data out" feature, which enables the game to output a UDP data stream to a configurable IP address.
 
-## Game configuration
-todo
-
 ## Forza Parser
 
 The ForzaParser.js File handels the conversion from the udp-stream message to a usable object.
@@ -183,12 +180,16 @@ The ForzaParser.js ```parseData()``` method returns the following data:
 }
 ```
 
-## HTTP Server
-todo
-
 
 ## Extensions
-todo
+configure your own extensions in config.js
+
+Extension must export functions:
+  Setup: function (GameData, config)
+  _hook_serve_message: function (GameData)
+
+## HTTP Server Extension
+The http server example is a website that shows driving statistics
 
 ## Serial COM Extension
-todo
+The arduino example is a RPM display

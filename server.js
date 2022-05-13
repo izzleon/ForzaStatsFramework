@@ -39,7 +39,7 @@ server.on('message', function (msg) {
 });
 
 // udp server | bind to port 9999
-server.bind(9999);
+server.bind(config.server.port);
 
 // -------------------------    EXTENSIONS   ------------------------- 
 
